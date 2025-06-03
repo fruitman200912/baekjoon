@@ -1,19 +1,7 @@
-def itin(b, a, i):
-  for j in range(a):
-    if t != b[j][i]:
-      return False
-  return True
+n = int(input())
+f = int(input())
 
-a = int(input())
-b = []
+while n % f != 0:
+  n+=1
 
-for i in range(a):
-  b.append(input())
-
-for i in range(len(b[0])):
-  t = b[0][i]
-  j = itin(b, a, i)
-  if j:
-    print(t,end="")
-  else:
-   print("?",end="")
+print("%02d"%(n%100))
