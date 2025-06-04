@@ -1,9 +1,24 @@
 n = int(input())
-f = int(input())
+ns = [0 for _ in range(n)]
 
-for i in range(100):
-  n = n - (n%100) + i
-  if n != 0 and n%f == 0:
-    break
+ns_c = input().split()
 
-print("%02d"%(n%100))
+for i in range(n):
+  ns[i] = int(ns_c[i])
+
+
+a = 1
+while True:
+  t = False
+  a+=1
+  for i in ns:
+    if a <= i and a % i != 0:
+      for j in range(2,a):
+        if a % j == 0:
+          if not j in ns:
+            t = True
+  if t:
+    continue
+  break
+
+print(a)
