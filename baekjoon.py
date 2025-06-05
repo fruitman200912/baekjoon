@@ -1,24 +1,17 @@
 n = int(input())
-ns = [0 for _ in range(n)]
+n_list = list(map(int,input().split()))
 
-ns_c = input().split()
+num = max(n_list)+1
+while 1:
+  for i in n_list:
+    if num % i != 0:
+      break
+    else:
+      for i in range(2,num):
+        if num % i == 0 and not(i in n_list):
+          break
+  else:
+    break
+  num += 1
 
-for i in range(n):
-  ns[i] = int(ns_c[i])
-
-
-a = 1
-while True:
-  t = False
-  a+=1
-  for i in ns:
-    if a <= i and a % i != 0:
-      for j in range(2,a):
-        if a % j == 0:
-          if not j in ns:
-            t = True
-  if t:
-    continue
-  break
-
-print(a)
+print(num)
