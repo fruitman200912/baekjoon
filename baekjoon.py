@@ -1,18 +1,18 @@
-n = int(input())
-n_list = list(map(int,input().split()))
+o = {
+  'black' : [0, 1],
+  'brown' : [1, 10],
+  'red' : [2, 100],
+  'orange' : [3, 1000],
+  'yellow' : [4, 10000],
+  'green' : [5, 100000],
+  'blue' : [6, 1000000],
+  'violet' : [7, 10000000],
+  'grey' : [8, 100000000],
+  'white' : [9, 1000000000]
+}
 
-num = max(n_list)+1
-while 1:
-  for i in n_list:
-    if num % i != 0:
-      break
-  else:
-    for i in range(2,num):
-      if num % i == 0 and not(i in n_list):
-        num += 1
-        break
-    else:
-      break
-  num += 1
+o1 = o[input()][0]*10
+o2 = o[input()][0]
+a = o[input()][1]
 
-print(num)
+print((o1+o2)*a)
