@@ -1,18 +1,20 @@
-o = {
-  'black' : [0, 1],
-  'brown' : [1, 10],
-  'red' : [2, 100],
-  'orange' : [3, 1000],
-  'yellow' : [4, 10000],
-  'green' : [5, 100000],
-  'blue' : [6, 1000000],
-  'violet' : [7, 10000000],
-  'grey' : [8, 100000000],
-  'white' : [9, 1000000000]
-}
+n = int(input())
+o = [
+  [10],
+  [1],
+  [2,4,8,6],
+  [3,9,7,1],
+  [4,6],
+  [5],
+  [6],
+  [7,9,3,1],
+  [8,4,2,6],
+  [9,1]
+]
+t = []
+for i in range(n):
+  a, b = map(int,input().split())
+  t.append(o[a%10][(b-1)%len(o[a%10])])
 
-o1 = o[input()][0]*10
-o2 = o[input()][0]
-a = o[input()][1]
-
-print((o1+o2)*a)
+for i in range(n):
+  print(t[i])
