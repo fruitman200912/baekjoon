@@ -1,20 +1,26 @@
-n = int(input())
-o = [
-  [10],
-  [1],
-  [2,4,8,6],
-  [3,9,7,1],
-  [4,6],
-  [5],
-  [6],
-  [7,9,3,1],
-  [8,4,2,6],
-  [9,1]
-]
-t = []
-for i in range(n):
-  a, b = map(int,input().split())
-  t.append(o[a%10][(b-1)%len(o[a%10])])
+o = input()
+x = []
 
-for i in range(n):
-  print(t[i])
+for i in range(len(o)):
+  a = int(o[i])
+  if a // 4 == 1:
+    a-=4
+    x.append(1)
+  else:
+    x.append(0)
+  if a // 2 == 1:
+    a-=2
+    x.append(1)
+  else:
+    x.append(0)
+  x.append(a)
+
+i = 0
+while x[i] != 1:
+  i+=1
+  if i >= len(x):
+    print(0)
+    break
+
+for i in range(i,len(x)):
+  print(x[i],end="")
