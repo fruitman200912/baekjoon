@@ -1,19 +1,13 @@
-n = int(input())
+n = input().split()
 
-key = n if n >= 10 else n*10
-
-a = key//10
-b = key%10
-
-count = 0
-
+i = 2
 while(1):
-  c = b
-  n = ((a+b)%10) + c*10
-  a = n//10
-  b = n%10
-  count+=1
-  if key == n:
+  count = 0
+  for j in n:
+    if int(j) % i ==0:
+      count += 1
+  if count>=3:
     break
+  i+=1
 
-print(count)
+print(i)
