@@ -1,26 +1,19 @@
-o = input()
-x = []
+n = int(input())
 
-for i in range(len(o)):
-  a = int(o[i])
-  if a // 4 == 1:
-    a-=4
-    x.append(1)
-  else:
-    x.append(0)
-  if a // 2 == 1:
-    a-=2
-    x.append(1)
-  else:
-    x.append(0)
-  x.append(a)
+key = n if n >= 10 else n*10
 
-i = 0
-while x[i] != 1:
-  i+=1
-  if i >= len(x):
-    print(0)
+a = key//10
+b = key%10
+
+count = 0
+
+while(1):
+  c = b
+  n = ((a+b)%10) + c*10
+  a = n//10
+  b = n%10
+  count+=1
+  if key == n:
     break
 
-for i in range(i,len(x)):
-  print(x[i],end="")
+print(count)
