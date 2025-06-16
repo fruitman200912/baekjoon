@@ -1,13 +1,5 @@
-n = list(map(int,input().split()))
+x, y, w, h = map(int,input().split())
 
-i = 2
-while 1:
-  count = 0
-  for j in n:
-    if i % j ==0:
-      count += 1
-  if count>=3:
-    break
-  i+=1
+a = [x, y, w-x, h-y]
 
-print(i)
+print(min(a))
