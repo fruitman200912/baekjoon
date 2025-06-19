@@ -1,13 +1,11 @@
-b = []
+n = int(input())
+A = list(map(int, input().split()))
+sorted_A = sorted(A)
 
-for i in range(8):
-  b.append(input())
+P = []
+for x in A:
+    idx = sorted_A.index(x)
+    P.append(idx)
+    sorted_A[idx] = -1
 
-n = 0
-
-for i in range(8):
-  for j in range(i%2,8,2):
-    if b[i][j] == 'F':
-      n+=1
-
-print(n)
+print(*P)
